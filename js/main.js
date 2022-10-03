@@ -49,16 +49,16 @@ document.querySelectorAll(".bar li").forEach((li, i) => {
         e.currentTarget.classList.add("active");
 
         // Change Image On click
-        document.querySelector(".box-kids img").src = `img/${imgsCarousel[i]}`;
+        document.querySelector(".box-kids").style.backgroundImage = `url(img/${imgsCarousel[i]})`;
 
         // Change Text
-        document .querySelector(".overlay h2").innerHTML = texts[i];
+        document .querySelector(".box-kids .text h2").innerHTML = texts[i];
     })
 
     // Automatically Change Image
     let index = 0;
     setInterval(function() {
-        document.querySelector(".box-kids img").src = `img/${imgsCarousel[index]}`;
+        document.querySelector(".box-kids").style.backgroundImage = `url(img/${imgsCarousel[index]})`;
 
         index++;
 
@@ -71,7 +71,7 @@ document.querySelectorAll(".bar li").forEach((li, i) => {
         document.querySelectorAll(".bar li")[index-1].classList.add("active");
 
         // Change Text
-        document .querySelector(".overlay h2").innerHTML = texts[index-1];
+        document .querySelector(".box-kids .text h2").innerHTML = texts[index-1];
 
         if (index === 3) index = 0;
     },5000)
